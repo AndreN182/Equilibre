@@ -1,2 +1,2 @@
 # Equilibre
-Site deuma Smotheria
+Site de uma Smootheria

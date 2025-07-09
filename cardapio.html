@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio Completo - Equilibre Healthy Food</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #121212;
+      color: #fff;
+    }
+
+    header {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #1e1e1e;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1,
+    h2 {
+      color: #f1c40f;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    section.menu-section {
+      margin-bottom: 3rem;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-item {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item h3 {
+      margin-bottom: 0.5rem;
+      color: #f1c40f;
+    }
+
+    .menu-item p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #e74c3c;
+      font-size: 1.1rem;
+    }
+
+    .social-media i:hover{
+      color: #F1C40F;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">
+        <img
+          src="img/logo_1698161072.webp"
+          alt="Equilibre Logo"
+          style="height: 80px"
+        />
+      </a>
+    <nav id="nav">
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Ver Cardápio</a>
+      <a href="#pedido">Pedir Online</a>
+    </nav>
+    <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <main>
+    <h1>Cardápio Completo</h1>
+
+    <section class="menu-section" id="entradas">
+      <h2>Entradas</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Salada Equilibre</h3>
+          <p>Mix de folhas orgânicas com molho cítrico e sementes crocantes.</p>
+          <div class="price">$ 25,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Hummus com Pão Sírio</h3>
+          <p>Pasta de grão-de-bico temperada servida com pão sírio artesanal.</p>
+          <div class="price">$ 18,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Sopa Detox</h3>
+          <p>Caldo leve de legumes com toque de gengibre e ervas frescas.</p>
+          <div class="price">$ 20,00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="pratos-principais">
+      <h2>Pratos Principais</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Bowl Proteico</h3>
+          <p>Quinoa, grão-de-bico, legumes grelhados, abacate e molho tahine.</p>
+          <div class="price">$ 38,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Wrap de Frango Grelhado</h3>
+          <p>Tortilha integral recheada com frango, alface, tomate e molho pesto.</p>
+          <div class="price">$ 32,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Panqueca Integral</h3>
+          <p>Panquecas feitas com farinha integral, recheio de frutas e mel.</p>
+          <div class="price">$ 28,00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="bebidas">
+      <h2>Bebidas</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Green Smoothie</h3>
+          <p>Couve, maçã verde, banana e gengibre – refrescante e nutritivo.</p>
+          <div class="price">$ 18,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Suco Sunshine</h3>
+          <p>Laranja, cenoura e gengibre natural, sem açúcar.</p>
+          <div class="price">$ 16,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Café Orgânico</h3>
+          <p>Café 100% orgânico, preparado na hora.</p>
+          <div class="price">$ 8,00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="sobremesas">
+      <h2>Sobremesas</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Açaí Bowl</h3>
+          <p>Açaí com frutas frescas, granola e mel, fonte de energia natural.</p>
+          <div class="price">$ 22,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Brownie Vegano</h3>
+          <p>Brownie feito com ingredientes veganos e adoçado naturalmente.</p>
+          <div class="price">$ 15,00</div>
+        </div>
+        <div class="menu-item">
+          <h3>Salada de Frutas</h3>
+          <p>Mix de frutas da estação, frescas e suculentas.</p>
+          <div class="price">$ 12,00</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="pedido">
+      <h2>Peça Online</h2>
+      <p style="text-align:center; margin-bottom:1rem;">Faça seu pedido via DoorDash ou Uber Eats</p>
+      <div style="text-align:center;">
+        <a style="display:inline-block; background:#f1c40f; color:#000; font-weight:bold; padding:0.75rem 1.5rem; border-radius:25px; text-decoration:none; margin:0 0.5rem;"
+          href="https://order.online/store/Equilibre-Healthy-Food-834149/?hideModal=true" target="_blank" rel="noopener noreferrer">DoorDash</a>
+        <a style="display:inline-block; background:#f1c40f; color:#000; font-weight:bold; padding:0.75rem 1.5rem; border-radius:25px; text-decoration:none; margin:0 0.5rem;"
+          href="https://www.ubereats.com/store/equilibre-healthy-food/" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+  <p>Address: 1807 N Orange Ave, Orlando, FL</p>
+  <p>Telephone: (407) 947-1519</p>
+  <p>&copy; 2025 Equilibre Healthy Food</p>
+  <p>&copy; StudioA</p>
+
+  <!-- Redes sociais -->
+  <div class="social-media" style="margin-top: 10px;">
+    <a href="https://www.instagram.com/seu_perfil" target="_blank" aria-label="Instagram" style="margin-right: 10px; color: inherit;">
+      <i class="fab fa-instagram fa-lg"></i>
+    </a>
+    <a href="https://www.facebook.com/seu_perfil" target="_blank" aria-label="Facebook" style="color: inherit;">
+      <i class="fab fa-facebook fa-lg"></i>
+    </a>
+  </div>
+</body>
+
+</html>

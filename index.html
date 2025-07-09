@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0" />
+  <meta name="description"
+    content="Descubra o cardápio completo da Equilibre Healthy Food: pratos saudáveis, bebidas frescas e sobremesas naturais. Peça online via DoorDash e Uber Eats ou visite nossa cafeteria em Orlando para uma experiência deliciosa e nutritiva." />
+
+  <title>Equilibre Healthy Food</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #121212;
+      color: #fff;
+    }
+
+    header {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #f1c40f;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #1e1e1e;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: url("https://images.unsplash.com/photo-1572448862528-0c50d3ac9c15") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #c0392b;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #f1c40f;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1rem;
+    }
+
+    .product-content h3 {
+      margin-bottom: 0.5rem;
+      color: #f1c40f;
+    }
+
+    .product-content p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .integracoes,
+    .depoimentos,
+    .galeria {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .integracoes a,
+    .hero a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #f1c40f;
+      color: #000;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    .depoimentos blockquote {
+      background: #1e1e1e;
+      border-left: 5px solid #f1c40f;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 700px;
+      color: #fff;
+      font-style: italic;
+    }
+
+    .galeria img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0.5rem;
+      border-radius: 10px;
+    }
+
+    #contato a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .social-media i:hover{
+      color: #F1C40F;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo_1698161072.webp" alt="Equilibre Logo" style="height: 80px" />
+    </a>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="cardapio.html">See Menu</a>
+      <a href="#contato">Contact</a>
+      <a href="#pedido">Order Online</a>
+    </nav>
+    <div class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Eat a Balanced Diet</h1>
+    <p>Flavor and health in every bite</p>
+    <a href="cardapio.html">See Menu</a>
+  </section>
+
+  <section class="section" id="cardapio">
+    <h2>Most Popular</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/acai.jpg" alt="Açaí Bowl" />
+        <div class="product-content">
+          <h3>Açaí Bowl</h3>
+          <p>
+            With fresh fruit, granola and honey. An explosion of flavor and
+            energy!
+          </p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="img/green-smoothie.jpg" alt="Smoothie Verde" />
+        <div class="product-content">
+          <h3>Green Smoothie</h3>
+          <p>
+            Made with kale, green apple, banana and ginger. Refreshing and
+            healthy!
+          </p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="img/Wrap de Frango.jpg" alt="Chicken Wrap" />
+        <div class="product-content">
+          <h3>Chicken Wrap</h3>
+          <p>
+            Grilled chicken, fresh vegetables and pesto sauce on a whole wheat
+            tortilla.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section depoimentos" id="depoimentos">
+    <h2>What our customers say</h2>
+    <blockquote>
+      “Every dish has SO MUCH FLAVOR. I've never tried anything I didn't like.
+I wish I could eat here every day!” – Hannah W.
+    </blockquote>
+    <blockquote>
+      “The place is a total vibe! Martha is so sweet and welcoming! The Sunshine juice was great!” – Cliente
+    </blockquote>
+    <blockquote>
+      “The food was delicious and tasted like something I would make at home.
+Super clean and fresh ingredients.” – Mackenzie T.
+    </blockquote>
+    <blockquote>
+      “The atmosphere is welcoming and the service is impeccable. Each dish is a masterpiece of flavor and health.” – Orlando Navigator
+    </blockquote>
+  </section>
+
+  <section class="section galeria" id="galeria">
+    <h2>Our Space</h2>
+    <img src="img/back.jpg" alt="Ambiente Interno" />
+    <img src="img/front2.jpg" alt="Área Externa" />
+    <img src="img/front.jpg" alt="Prato Saudável" />
+  </section>
+
+  <section class="section integracoes" id="pedido">
+    <h2>Order Online</h2>
+    <a href="https://order.online/store/Equilibre-Healthy-Food-834149/?hideModal=true" target="_blank">Order via
+DoorDash</a>
+    <a href="https://www.ubereats.com/store/equilibre-healthy-food/" target="_blank">Order via Uber Eats</a>
+  </section>
+
+  <footer id="contato">
+  <p>Address: 1807 N Orange Ave, Orlando, FL</p>
+  <p>Telephone: (407) 947-1519</p>
+  <p>&copy; 2025 Equilibre Healthy Food</p>
+  <p>&copy; StudioA</p>
+
+  <!-- Redes sociais -->
+  <div class="social-media" style="margin-top: 10px;">
+    <a href="https://www.instagram.com/seu_perfil" target="_blank" aria-label="Instagram" style="margin-right: 10px; color: inherit;">
+      <i class="fab fa-instagram fa-lg"></i>
+    </a>
+    <a href="https://www.facebook.com/seu_perfil" target="_blank" aria-label="Facebook" style="color: inherit;">
+      <i class="fab fa-facebook fa-lg"></i>
+    </a>
+  </div>
+</footer>
+
+
+  
+</body>
+
+</html>
